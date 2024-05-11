@@ -7,13 +7,33 @@
 <p>保存できる食料品（缶詰、カンパン、ラーメン、粉ミルク、缶飲料など）を3日分程度準備していますか？</p>
 <button onclick="haiClick()">はい</button>
 <button onclick="iieclick()">いいえ</button>
+
 <script>
+var mergency_items = [
+  '衣類(セーター、ジャンパー、下着類など)を準備していますか？',
+  '貴重品(保険証、印鑑、預貯金通帳など)を準備していますか',
+  '医薬品(傷薬、胃腸薬、包帯、絆創膏（ばんそうこう）などのほか薬を服用している場合はその処方せんのコピーなど)を準備していますか。',
+  'ハザードマップを確認していますか？（津波や洪水、大雨など)',
+];
+var score = 0;
+var num = 0;
+
 function haiClick(){
-  alert('素晴らしい！');
+  document.querySelector("p").innerText = mergency_items[num];
+  score = score + 1;
+  num = num + 1;
+  if (num == 5)  {
+    alert("あなたのスコアは" + score + "です"); //+や=の前後にはスペースを入れる命令の後にはセミコロン
+  }
 }
 function iieclick(){
-  alert('しっかりと準備しましょう');
+  document.querySelector("p").innerText = mergency_items[num];
+  num = num + 1;
+  if (num == 5){
+    alert("あなたのスコアは" + score + "です"); //+や=の前後にはスペースを入れる命令の後にはセミコロン
+  }
 }
+
 </script>
 </body>
 </html>
